@@ -10,6 +10,7 @@ import com.cos.jwtex01.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+// http://localhost:8080/login 폼테그로는 동작안함
 @Service
 @RequiredArgsConstructor
 public class PrincipalDetailsService implements UserDetailsService{

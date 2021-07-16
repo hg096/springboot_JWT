@@ -13,10 +13,10 @@ public class CorsConfig {
    public CorsFilter corsFilter() {
       UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
       CorsConfiguration config = new CorsConfiguration();
-      config.setAllowCredentials(true);
-      config.addAllowedOrigin("*"); // e.g. http://domain1.com
-      config.addAllowedHeader("*");
-      config.addAllowedMethod("*");
+      config.setAllowCredentials(true); // 내서버가 응답할때 JSON을 자바스크립트에서 처리할 수 있게 할지를 설정
+      config.addAllowedOrigin("*"); // e.g. http://domain1.com 모든 ip에 응답
+      config.addAllowedHeader("*"); // 모든 헤더 응답 
+      config.addAllowedMethod("*"); // 모든 post, get, delete, patch 요청 응답
 
       source.registerCorsConfiguration("/api/**", config);
       return new CorsFilter(source);
